@@ -11,4 +11,22 @@ const buttonSettings = {
         color: '#444'
     },
     text: 'Click me!',
+};
+
+const sectionElement = document.querySelector('.parent-for-button');
+
+if (sectionElement) {
+    const button = document.createElement("button");
+
+    for (const key in buttonSettings.attr) {
+        button[key] = buttonSettings.attr[key];
+    }
+
+    for (const key in buttonSettings.css) {
+        button.style[key] = buttonSettings.css[key];
+    }
+
+    button.textContent = buttonSettings.text;
+
+    sectionElement.appendChild(button);
 }
